@@ -1,9 +1,9 @@
 start = P;
-end = P;
+end = N;
 
 transitions:
-P 0 : P
-P 1 : N
+P 0 : N
+P 1 : P
 N 0 : N
 N 1 : P
 ;
