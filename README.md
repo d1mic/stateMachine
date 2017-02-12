@@ -1,7 +1,7 @@
 # stateMachine
 
 ----
-## Intersect of two DFSM
+## Intersect/Union of two DFSM
 see [Wikipedia](https://en.wikipedia.org/wiki/Deterministic_finite_automaton)
 
 >This is a program that takes two deterministic finite state machines (DFSM) and makes a DFSM that accepts the intersect or union of languages of those two state machines.
@@ -10,14 +10,14 @@ see [Wikipedia](https://en.wikipedia.org/wiki/Deterministic_finite_automaton)
 ## Usage
 1. Download repository
 2. Run from terminal 
-**python state.py path/to/file**  
+**python state.py -option(i/u) path/to/file**  
 
 ----
 
 ## State machines syntax
 
 
->Deterministic state machines should be stored in file ( such as test) with the following syntax. State machines should be listed one after the other like in the test file.
+>Deterministic state machines should be stored in file ( such as test) with the following syntax. State machines should be listed one after the other like in the test file. 
 
 ----
 ### Initial states

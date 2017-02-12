@@ -4,15 +4,25 @@ import sys
 
 #Checking if the user has enetered the correct number of parameters
 
-if len(sys.argv) != 2:
-	exit("Program executed as: python " + sys.argv[0] + " path/to/file");
+if len(sys.argv) != 3:
+	exit("Program executed as: python " + sys.argv[0] + " -option(i/u) path/to/file");
 
 #Opening file and reading it
 try: 
-	with open(sys.argv[1] , "r") as f:
+	with open(sys.argv[2] , "r") as f:
 		dat = f.read();
 except IOError:
 	exit("Open error");
+
+# Checking option
+
+if sys.argv[1][1] == 'i' :
+	print "Intersection state machine: "
+elif sys.argv[1][1] == 'u' :
+	print "Union state machine: "
+else:
+	exit("Wrong option, must be -i or -u")
+
 
 #Getting information for the first and second state machine
 
@@ -77,6 +87,7 @@ for x in rState.finditer(actions2):
 
 automat3 = {}
 intersection = set()
+union = set()
 
 # Making the Cartesian product of 2 state machines
 
@@ -86,8 +97,9 @@ for s1 in states1:
 			automat3[s1+s2, i] = automat1[s1,i] + automat2[s2,i]
 			if(s1 in endState1 and s2 in endState2):
 				intersection.add(s1+s2)
+			if(s1 in endState1 or s2 in endState2):
+				union.add(s1+s2)
 
-print "State machine created! :) "
 
 # Run the state machine
 
@@ -104,11 +116,25 @@ while True:
     except ValueError:
         print "Not in the alphabet. Try again."
         continue
-   
-if state in intersection:
-    print "State machine accepts the word"
-else:
-    print "State machine does not accept the word"
+
+
+
+
+if sys.argv[1][1] == 'i' :
+
+	if state in intersection:
+		print "State machine accepts the word"
+	else:
+		print "State machine does not accept the word"
+
+elif sys.argv[1][1] == 'u' :
+	if state in union:
+		print "State machine accepts the word"
+	else:
+		print "State machine does not accept the word"
+
+
+
 
 
 
