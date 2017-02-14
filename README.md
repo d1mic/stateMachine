@@ -1,7 +1,7 @@
 # stateMachine
 
 ----
-## Intersect/Union of two DFSM
+## Intersection/Union of two DFSM
 see [Wikipedia](https://en.wikipedia.org/wiki/Deterministic_finite_automaton)
 
 >This is a program that takes two deterministic finite state machines (DFSM) and makes a DFSM that accepts the intersect or union of languages of those two state machines.

@@ -56,7 +56,7 @@ endState2 = re.findall(r'[A-Za-z0-9_]+' , endStates2)
 actions =  first.group('actions')
 actions2 = second.group('actions')
 
-# Createing maps for actions, and sets for states 
+# Creating maps for actions, and sets for states 
 
 automat1 = {}
 states1  = set()
